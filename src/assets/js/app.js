@@ -212,7 +212,7 @@ function topFunction() {
 }
 
 //Feather icon
-feather.replace();
+//feather.replace();
 
 //ACtive Sidebar
 (function () {

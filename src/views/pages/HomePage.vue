@@ -1,9 +1,6 @@
 <template>
     <DefaultLayout>
-        <p>Page d'accueil</p>
-        <p>ysadbfhdsaviuophvuiervb3grgfuoerugheufo8wfuoireq</p>
     </DefaultLayout>   
-    <indexcafe/> 
 </template>
 
 <script setup lang="ts">

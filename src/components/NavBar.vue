@@ -1,385 +1,232 @@
-<template>
-  <header>
-        <!-- Start Navbar -->
-        <nav id="topnav" class="defaultscroll is-sticky">
-            <div class="container relative">
-                <!-- Logo container-->
-                <a class="logo" href="index.html">
-                    <span class="inline-block dark:hidden">
-                        <img src="../../assets/images/logo-dark.png" class="l-dark" height="24" alt="">
-                        <img src="../../assets/images/logo-light.png" class="l-light" height="24" alt="">
-                    </span>
-                    <img src="../../assets/images/logo-light.png" height="24" class="hidden dark:inline-block" alt="">
-                </a>
+<template>    
+    <body class="font-nunito text-base text-black dark:text-white dark:bg-slate-900">
+        <!-- Loader Start -->
+        <!-- <div id="preloader">
+            <div id="status">
+                <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>
+        </div> -->
+        <!-- Loader End -->
 
-                <!-- End Logo container-->
-                <div class="menu-extras">
-                    <div class="menu-item">
-                        <!-- Mobile menu toggle-->
-                        <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
-                            <div class="lines">
-                                <span></span>
-                                <span></span>
-                                <span></span>
+
+        <div class="page-wrapper toggled">
+            <!-- sidebar-wrapper -->
+            <nav id="sidebar" class="sidebar-wrapper sidebar-dark">
+                <div class="sidebar-content">
+                    <div class="sidebar-brand">
+                        <a href="index.html"><img src="../assets/images/logo-light.png" height="24" alt=""></a>
+                    </div>
+        
+                    <ul class="sidebar-menu border-t border-white/10" data-simplebar style="height: calc(100% - 70px);">
+                        <li class="sidebar-dropdown">
+                            <a href="javascript:void(0)"><i class="uil uil-user me-2"></i>User Profile</a>
+                            <div class="sidebar-submenu">
+                                <ul>
+                                    <li><a href="profile.html">Profile</a></li>
+                                    <li><a href="profile-billing.html">Billing Info</a></li>
+                                    <li><a href="profile-payment.html">Payment</a></li>
+                                    <li><a href="profile-social.html">Social Profile</a></li>
+                                    <li><a href="profile-notification.html">Notifications</a></li>
+                                    <li><a href="profile-setting.html">Profile Settings</a></li>
+                                </ul>
                             </div>
-                        </a>
-                        <!-- End mobile menu toggle-->
+                        </li>
+                        <li class="relative lg:m-8 m-6 px-8 py-10 rounded-lg bg-gradient-to-b to-transparent from-slate-800 text-center">
+                            <span class="relative z-10">
+                                <span class="text-xl font-bold h5 text-white">Upgrade to Pro</span>
+
+                                <span class="text-slate-400 mt-3 mb-5 block">Get one month free and subscribe to pro</span>
+
+                                <a href="https://1.envato.market/techwind" target="_blank" class="py-2 px-5 inline-block font-semibold tracking-wide border align-middle transition duration-500 ease-in-out text-base text-center bg-gray-500/5 hover:bg-gray-500 border-gray-500/10 hover:border-gray-500 text-white rounded-md">Subscribe</a>
+                            </span>
+                
+                            <img src="../assets/images/shree-276.png" class="absolute top-1/2 -translate-y-1/2 start-0 end-0 mx-auto text-center h-40 w-40 z-0 opacity-5" alt="">
+                        </li>
+                    </ul>
+                    <!-- sidebar-menu  -->
+                </div>
+            </nav>
+            <!-- sidebar-wrapper  -->
+
+            <!-- Start Page Content -->
+            <main class="page-content bg-gray-50 dark:bg-slate-800">
+                <!-- Top Header -->
+                <div class="top-header">
+                    <div class="header-bar flex justify-between">
+                        <div class="flex items-center space-x-1">
+                            <!-- Logo -->
+                            <a href="#" class="xl:hidden block me-2">
+                                <img src="../assets/images/logo-icon-32.png" class="md:hidden block" alt="">
+                                <span class="md:block hidden">
+                                    <img src="../assets/images/logo-dark.png" class="inline-block dark:hidden" alt="">
+                                    <img src="../assets/images/logo-light.png" class="hidden dark:inline-block" alt="">
+                                </span>
+                            </a>
+                            <!-- Logo -->
+
+                            <!-- show or close sidebar -->
+                            <a id="close-sidebar" class="h-8 w-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-[20px] text-center bg-gray-50 dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-slate-700 border border-gray-100 dark:border-gray-800 text-slate-900 dark:text-white rounded-full" href="javascript:void(0)">
+                                <i data-feather="menu" class="h-4 w-4"></i>
+                            </a>
+                            <!-- show or close sidebar -->
+            
+                            <!-- Searchbar -->
+                            <div class="ps-1.5">
+                                <div class="form-icon relative sm:block hidden">
+                                    <i class="uil uil-search absolute top-1/2 -translate-y-1/2 start-3"></i>
+                                    <input type="text" class="form-input w-56 ps-9 py-2 px-3 h-8 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded-3xl outline-none border border-gray-100 dark:border-gray-800 focus:ring-0 bg-white" name="s" id="searchItem" placeholder="Search...">
+                                </div>
+                            </div>
+                            <!-- Searchbar -->
+                        </div>
+
+                        <ul class="list-none mb-0 space-x-1">
+                            <!-- Notification Dropdown -->
+                            <li class="dropdown inline-block relative">
+                                <button data-dropdown-toggle="dropdown" class="dropdown-toggle h-8 w-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-[20px] text-center bg-gray-50 dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-slate-700 border border-gray-100 dark:border-gray-800 text-slate-900 dark:text-white rounded-full" type="button">
+                                    <i data-feather="bell" class="h-4 w-4"></i>
+                                    <span class="absolute top-0 end-0 flex items-center justify-center bg-red-600 text-white text-[10px] font-bold rounded-full w-2 h-2 after:content-[''] after:absolute after:h-2 after:w-2 after:bg-red-600 after:top-0 after:end-0 after:rounded-full after:animate-ping"></span>
+                                </button>
+                                <!-- Dropdown menu -->
+                                <div class="dropdown-menu absolute end-0 m-0 mt-4 z-10 w-64 rounded-md overflow-hidden bg-white dark:bg-slate-900 shadow dark:shadow-gray-700 hidden" onclick="event.stopPropagation();">
+                                    <span class="px-4 py-4 flex justify-between">
+                                        <span class="font-semibold">Notifications</span>
+                                        <span class="flex items-center justify-center bg-red-600/20 text-red-600 text-[10px] font-bold rounded-full w-5 max-h-5 ms-1">3</span>
+                                    </span>
+                                    <ul class="py-2 text-start h-64 border-t border-gray-100 dark:border-gray-800" data-simplebar>
+                                        <li>
+                                            <a href="" class="block font-medium py-1.5 px-4">
+                                                <div class="flex items-center">
+                                                    <div class="h-10 w-10 rounded-md shadow shadow-indigo-600/10 dark:shadow-gray-700 bg-indigo-600/10 dark:bg-slate-800 text-indigo-600 dark:text-white flex items-center justify-center">
+                                                        <i data-feather="shopping-cart" class="h-4 w-4"></i>
+                                                    </div>
+                                                    <div class="ms-2">
+                                                        <span class="text-[15px] font-semibold block">Order Complete</span>
+                                                        <small class="text-slate-400">15 min ago</small>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="block font-medium py-1.5 px-4">
+                                                <div class="flex items-center">
+                                                    <img src="../assets/images/client/04.jpg" class="h-10 w-10 rounded-md shadow dark:shadow-gray-700" alt="">
+                                                    <div class="ms-2">
+                                                        <span class="text-[15px] font-semibold block"><span class="font-bold">Message</span> from Luis</span>
+                                                        <small class="text-slate-400">1 hour ago</small>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="block font-medium py-1.5 px-4">
+                                                <div class="flex items-center">
+                                                    <div class="h-10 w-10 rounded-md shadow shadow-indigo-600/10 dark:shadow-gray-700 bg-indigo-600/10 dark:bg-slate-800 text-indigo-600 dark:text-white flex items-center justify-center">
+                                                        <i data-feather="dollar-sign" class="h-4 w-4"></i>
+                                                    </div>
+                                                    <div class="ms-2">
+                                                        <span class="text-[15px] font-semibold block"><span class="font-bold">One Refund Request</span></span>
+                                                        <small class="text-slate-400">2 hour ago</small>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="block font-medium py-1.5 px-4">
+                                                <div class="flex items-center">
+                                                    <div class="h-10 w-10 rounded-md shadow shadow-indigo-600/10 dark:shadow-gray-700 bg-indigo-600/10 dark:bg-slate-800 text-indigo-600 dark:text-white flex items-center justify-center">
+                                                        <i data-feather="truck" class="h-4 w-4"></i>
+                                                    </div>
+                                                    <div class="ms-2">
+                                                        <span class="text-[15px] font-semibold block">Deliverd your Order</span>
+                                                        <small class="text-slate-400">Yesterday</small>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="block font-medium py-1.5 px-4">
+                                                <div class="flex items-center">
+                                                    <img src="../assets/images/client/05.jpg" class="h-10 w-10 rounded-md shadow dark:shadow-gray-700" alt="">
+                                                    <div class="ms-2">
+                                                        <span class="text-[15px] font-semibold block"><span class="font-bold">Cally</span> started following you</span>
+                                                        <small class="text-slate-400">2 days ago</small>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li><!--end dropdown-->
+                            <!-- Notification Dropdown -->
+            
+                            <!-- User/Profile Dropdown -->
+                            <li class="dropdown inline-block relative">
+                                <button data-dropdown-toggle="dropdown" class="dropdown-toggle items-center" type="button">
+                                    <span class="h-8 w-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-[20px] text-center bg-gray-50 dark:bg-slate-800 hover:bg-gray-100 dark:hover:bg-slate-700 border border-gray-100 dark:border-gray-800 text-slate-900 dark:text-white rounded-full"><img src="../assets/images/client/05.jpg" class="rounded-full" alt=""></span>
+                                    <span class="font-semibold text-[16px] ms-1 sm:inline-block hidden">Cristina Murfy</span>
+                                </button>
+                                <!-- Dropdown menu -->
+                                <div class="dropdown-menu absolute end-0 m-0 mt-4 z-10 w-44 rounded-md overflow-hidden bg-white dark:bg-slate-900 shadow dark:shadow-gray-700 hidden" onclick="event.stopPropagation();">
+                                    <ul class="py-2 text-start">
+                                        <li>
+                                            <a href="profile.html" class="block font-medium py-1 px-4 dark:text-white/70 hover:text-indigo-600 dark:hover:text-white"><i class="uil uil-user me-2"></i>Profile</a>
+                                        </li>
+                                        <li>
+                                            <a href="chat.html" class="block font-medium py-1 px-4 dark:text-white/70 hover:text-indigo-600 dark:hover:text-white"><i class="uil uil-comment me-2"></i>Chat</a>
+                                        </li>
+                                        <li>
+                                            <a href="email.html" class="block font-medium py-1 px-4 dark:text-white/70 hover:text-indigo-600 dark:hover:text-white"><i class="uil uil-envelope me-2"></i>Email</a>
+                                        </li>
+                                        <li>
+                                            <a href="profile-setting.html" class="block font-medium py-1 px-4 dark:text-white/70 hover:text-indigo-600 dark:hover:text-white"><i class="uil uil-setting me-2"></i>Settings</a>
+                                        </li>
+                                        <li class="border-t border-gray-100 dark:border-gray-800 my-2"></li>
+                                        <li>
+                                            <a href="lock-screen.html" class="block font-medium py-1 px-4 dark:text-white/70 hover:text-indigo-600 dark:hover:text-white"><i class="uil uil-lock me-2"></i>Lockscreen</a>
+                                        </li>
+                                        <li>
+                                            <a href="login.html" class="block font-medium py-1 px-4 dark:text-white/70 hover:text-indigo-600 dark:hover:text-white"><i class="uil uil-sign-out-alt me-2"></i>Logout</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li><!--end dropdown-->
+                            <!-- User/Profile Dropdown -->
+                        </ul>
                     </div>
                 </div>
+                <!-- Top Header -->
+                <!-- End -->
+            </main>
+            <!--End page-content" -->
+        </div>
+        <!-- page-wrapper -->
 
-                <!--Login button Start-->
-                <ul class="buy-button list-none mb-0">
-                    <li class="inline mb-0">
-                        <a href="">
-                            <span class="login-btn-primary"><span class="h-9 w-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center rounded-full bg-indigo-600/5 hover:bg-indigo-600 border border-indigo-600/10 hover:border-indigo-600 text-indigo-600 hover:text-white"><i data-feather="settings" class="h-4 w-4"></i></span></span>
-                            <span class="login-btn-light"><span class="h-9 w-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center rounded-full bg-gray-50 hover:bg-gray-200 dark:bg-slate-900 dark:hover:bg-gray-700 border hover:border-gray-100 dark:border-gray-700 dark:hover:border-gray-700"><i data-feather="settings" class="h-4 w-4"></i></span></span>
-                        </a>
-                    </li>
-            
-                    <li class="inline ps-1 mb-0">
-                        <a href="https://1.envato.market/techwind" target="_blank">
-                            <div class="login-btn-primary"><span class="h-9 w-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center rounded-full bg-indigo-600 hover:bg-indigo-700 border border-indigo-600 hover:border-indigo-700 text-white"><i data-feather="shopping-cart" class="h-4 w-4"></i></span></div>
-                            <div class="login-btn-light"><span class="h-9 w-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center rounded-full bg-gray-50 hover:bg-gray-200 dark:bg-slate-900 dark:hover:bg-gray-700 border hover:border-gray-100 dark:border-gray-700 dark:hover:border-gray-700"><i data-feather="shopping-cart" class="h-4 w-4"></i></span></div>
-                        </a>
-                    </li>
-                </ul>
-                <!--Login button End-->
+        <!-- Switcher -->
+        <div class="fixed top-[30%] -end-3 z-50">
+            <span class="relative inline-block rotate-90">
+                <input type="checkbox" class="checkbox opacity-0 absolute" id="chk" />
+                <label class="label bg-slate-900 dark:bg-white shadow dark:shadow-gray-700 cursor-pointer rounded-full flex justify-between items-center p-1 w-14 h-8" for="chk">
+                    <i class="uil uil-moon text-[20px] text-yellow-500"></i>
+                    <i class="uil uil-sun text-[20px] text-yellow-500"></i>
+                    <span class="ball bg-white dark:bg-slate-900 rounded-full absolute top-[2px] left-[2px] w-7 h-7"></span>
+                </label>
+            </span>
+        </div>
+        <!-- Switcher -->
 
-                <div id="navigation">
-                    <!-- Navigation Menu-->   
-                    <ul class="navigation-menu nav-light">
-                        <li><a href="index.html" class="sub-menu-item">Home</a></li>
-                
-                        <li class="has-submenu parent-parent-menu-item">
-                            <a href="javascript:void(0)">Landings</a><span class="menu-arrow"></span>
-
-                            <ul class="submenu megamenu">
-                                <li>
-                                    <ul>
-                                        <li><a href="index-saas.html" class="sub-menu-item">Saas <span class="bg-emerald-600 inline-block text-white text-[10px] font-bold px-2.5 py-0.5 rounded h-5 ms-1">Animation</span></a></li>
-                                        <li><a href="index-classic-saas.html" class="sub-menu-item">Classic Saas </a></li>
-                                        <li><a href="index-modern-saas.html" class="sub-menu-item">Modern Saas </a></li>
-                                        <li><a href="index-apps.html" class="sub-menu-item">Application</a></li>
-                                        <li><a href="index-classic-app.html" class="sub-menu-item">Classic App </a></li>
-                                        <li><a href="index-ai.html" class="sub-menu-item">AI Tools <span class="bg-yellow-500 inline-block text-white text-[10px] font-bold px-2.5 py-0.5 rounded h-5 ms-1">New</span></a></li>
-                                        <li><a href="index-smartwatch.html" class="sub-menu-item">Smartwatch</a></li>
-                                        <li><a href="index-marketing.html" class="sub-menu-item">Marketing</a></li>
-                                        <li><a href="index-seo.html" class="sub-menu-item">SEO Agency </a></li>
-                                        <li><a href="index-software.html" class="sub-menu-item">Software </a></li>
-                                        <li><a href="index-payment.html" class="sub-menu-item">Payments</a></li>
-                                        <li><a href="index-charity.html" class="sub-menu-item">Charity </a></li>
-                                    </ul>
-                                </li>
-
-                                <li>
-                                    <ul>
-                                        <li><a href="index-it-solution.html" class="sub-menu-item">IT Solution</a></li>
-                                        <li><a href="index-it-solution-two.html" class="sub-menu-item">It Solution Two </a></li>
-                                        <li><a href="index-digital-agency.html" class="sub-menu-item">Digital Agency</a></li>
-                                        <li><a href="index-restaurent.html" class="sub-menu-item">Restaurent</a></li>
-                                        <li><a href="index-hosting.html" class="sub-menu-item">Hosting</a></li>
-                                        <li><a href="index-nft.html" class="sub-menu-item">NFT Marketplace </a></li>
-                                        <li><a href="index-hotel.html" class="sub-menu-item">Hotel & Resort</a></li>
-                                        <li><a href="index-travel.html" class="sub-menu-item">Travels <span class="bg-yellow-500 inline-block text-white text-[10px] font-bold px-2.5 py-0.5 rounded h-5 ms-1">New</span></a></li>
-                                        <li><a href="index-cafe.html" class="sub-menu-item">Cafe <span class="bg-black dark:bg-slate-50 inline-block text-white dark:text-slate-900 text-[10px] font-bold px-2.5 py-0.5 rounded h-5 ms-1">Dark</span></a></li>
-                                        <li><a href="index-gym.html" class="sub-menu-item">Gym <span class="bg-black dark:bg-slate-50 inline-block text-white dark:text-slate-900 text-[10px] font-bold px-2.5 py-0.5 rounded h-5 ms-1">Dark</span></a></li>
-                                        <li><a href="index-yoga.html" class="sub-menu-item">Yoga </a></li>
-                                        <li><a href="index-spa.html" class="sub-menu-item">Spa & Salon </a></li>            
-                                    </ul>
-                                </li>
-
-                                <li>
-                                    <ul>
-                                        <li><a href="index-job.html" class="sub-menu-item">Job</a></li>
-                                        <li><a href="index-startup.html" class="sub-menu-item">Startup</a></li>
-                                        <li><a href="index-business.html" class="sub-menu-item">Business</a></li>
-                                        <li><a href="index-corporate.html" class="sub-menu-item">Corporate</a></li>
-                                        <li><a href="index-corporate-two.html" class="sub-menu-item">Corporate Two </a></li>
-                                        <li><a href="index-real-estate.html" class="sub-menu-item">Real Estate</a></li>
-                                        <li><a href="index-consulting.html" class="sub-menu-item">Consulting </a></li>
-                                        <li><a href="index-insurance.html" class="sub-menu-item">Insurance </a></li>
-                                        <li><a href="index-construction.html" class="sub-menu-item">Construction </a></li>
-                                        <li><a href="index-law.html" class="sub-menu-item">Law Firm </a></li>
-                                        <li><a href="index-video.html" class="sub-menu-item">Video </a></li>
-                                    </ul>
-                                </li>
-                        
-                                <li>
-                                    <ul>
-                                        <li><a href="index-personal.html" class="sub-menu-item">Personal</a></li>
-                                        <li><a href="index-portfolio.html" class="sub-menu-item">Portfolio</a></li>
-                                        <li><a href="index-photography.html" class="sub-menu-item">Photography <span class="bg-black dark:bg-slate-50 inline-block text-white dark:text-slate-900 text-[10px] font-bold px-2.5 py-0.5 rounded h-5 ms-1">Dark</span></a></li>
-                                        <li><a href="index-studio.html" class="sub-menu-item">Studio</a></li>
-                                        <li><a href="index-coworking.html" class="sub-menu-item">Co-Woriking</a></li>
-                                        <li><a href="index-course.html" class="sub-menu-item">Online Courses </a></li>
-                                        <li><a href="index-event.html" class="sub-menu-item">Event / Conference </a></li>
-                                        <li><a href="index-podcast.html" class="sub-menu-item">Podcasts <span class="bg-yellow-500 inline-block text-white text-[10px] font-bold px-2.5 py-0.5 rounded h-5 ms-1">New</span></a></li>
-                                        <li><a href="index-hospital.html" class="sub-menu-item">Hospital</a></li>
-                                        <li><a href="index-phone-number.html" class="sub-menu-item">Phone Number</a></li>
-                                        <li><a href="index-forums.html" class="sub-menu-item">Forums </a></li>
-                                    </ul>
-                                </li>
-                        
-                                <li>
-                                    <ul>
-                                        <li><a href="index-shop.html" class="sub-menu-item">Shop / eCommerce  </a></li>
-                                        <li><a href="index-crypto.html" class="sub-menu-item">Cryptocurrency  <span class="bg-black dark:bg-slate-50 inline-block text-white dark:text-slate-900 text-[10px] font-bold px-2.5 py-0.5 rounded h-5 ms-1">Dark</span></a></li>
-                                        <li><a href="index-landing-one.html" class="sub-menu-item">Landing One</a></li>
-                                        <li><a href="index-landing-two.html" class="sub-menu-item">Landing Two</a></li>
-                                        <li><a href="index-landing-three.html" class="sub-menu-item">Landing Three</a></li>
-                                        <li><a href="index-landing-four.html" class="sub-menu-item">Landing Four</a></li>
-                                        <li><a href="index-service.html" class="sub-menu-item">Service Provider</a></li>
-                                        <li><a href="index-food-blog.html" class="sub-menu-item">Food Blog </a></li>
-                                        <li><a href="index-blog.html" class="sub-menu-item">Blog </a></li>
-                                        <li><a href="index-furniture.html" class="sub-menu-item">Furniture </a></li>
-                                        <li><a href="index-landing-five.html" class="sub-menu-item">Landing Five <span class="bg-green-600 inline-block text-white text-[10px] font-bold px-2.5 py-0.5 rounded h-5 ms-1">Onepage</span></a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="has-submenu parent-parent-menu-item">
-                            <a href="javascript:void(0)">Pages</a><span class="menu-arrow"></span>
-                            <ul class="submenu">
-                                <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Company </a><span class="submenu-arrow"></span>
-                                    <ul class="submenu">
-                                        <li><a href="page-aboutus.html" class="sub-menu-item"> About Us</a></li>
-                                        <li><a href="page-services.html" class="sub-menu-item">Services</a></li>
-                                        <li><a href="page-team.html" class="sub-menu-item"> Team</a></li>
-                                        <li><a href="page-pricing.html" class="sub-menu-item">Pricing</a></li>
-                                        <li><a href="page-testimonial.html" class="sub-menu-item">Testimonial </a></li>
-                                    </ul> 
-                                </li>
-                                <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Accounts</a><span class="submenu-arrow"></span>
-                                    <ul class="submenu">
-                                        <li><a href="user-profile.html" class="sub-menu-item">User Profile</a></li>
-                                        <li><a href="user-billing.html" class="sub-menu-item">Billing</a></li>
-                                        <li><a href="user-payment.html" class="sub-menu-item">Payment</a></li>
-                                        <li><a href="user-invoice.html" class="sub-menu-item">Invoice</a></li>
-                                        <li><a href="user-social.html" class="sub-menu-item">Social</a></li>
-                                        <li><a href="user-notification.html" class="sub-menu-item">Notification</a></li>
-                                        <li><a href="user-setting.html" class="sub-menu-item">Setting</a></li>
-                                    </ul> 
-                                </li>
-                                <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Real Estate</a><span class="submenu-arrow"></span>
-                                    <ul class="submenu">
-                                        <li><a href="property-listing.html" class="sub-menu-item">Listing</a></li>
-                                        <li><a href="property-detail.html" class="sub-menu-item">Property Detail</a></li>
-                                    </ul> 
-                                </li>
-                                <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Courses </a><span class="submenu-arrow"></span>
-                                    <ul class="submenu">
-                                        <li><a href="course-listing.html" class="sub-menu-item">Course Listing</a></li>
-                                        <li><a href="course-detail.html" class="sub-menu-item">Course Detail</a></li>
-                                    </ul> 
-                                </li>
-                                <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> NFT Market </a><span class="submenu-arrow"></span>
-                                    <ul class="submenu">
-                                        <li><a href="nft-explore.html" class="sub-menu-item">Explore</a></li>
-                                        <li><a href="nft-auction.html" class="sub-menu-item">Auction</a></li>
-                                        <li><a href="nft-collection.html" class="sub-menu-item">Collections</a></li>
-                                        <li class="has-submenu child-menu-item"><a href="javascript:void(0)"> Creator  </a><span class="submenu-arrow"></span>
-                                            <ul class="submenu">
-                                                <li><a href="nft-creators.html" class="sub-menu-item"> Creators</a></li>
-                                                <li><a href="nft-creator-profile.html" class="sub-menu-item"> Creator Profile </a></li>
-                                                <li><a href="nft-creator-profile-edit.html" class="sub-menu-item"> Profile Edit </a></li>
-                                            </ul>  
-                                        </li>
-                                        <li><a href="nft-wallet.html" class="sub-menu-item">Wallet</a></li>
-                                        <li><a href="nft-create-item.html" class="sub-menu-item">Create NFT</a></li>
-                                        <li><a href="nft-detail.html" class="sub-menu-item">Single NFT</a></li>
-                                    </ul> 
-                                </li>
-                                <li><a href="food-recipe.html" class="sub-menu-item">Food Recipe </a></li>
-                                <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> eCommerce </a><span class="submenu-arrow"></span>
-                                    <ul class="submenu">
-                                        <li><a href="shop-grid.html" class="sub-menu-item">Product Grid</a></li>
-                                        <li><a href="shop-grid-two.html" class="sub-menu-item">Product Grid Two</a></li>
-                                        <li><a href="shop-item-detail.html" class="sub-menu-item">Product Detail</a></li>
-                                        <li><a href="shop-cart.html" class="sub-menu-item">Shop Cart</a></li>
-                                        <li><a href="shop-checkout.html" class="sub-menu-item">Checkout</a></li>
-                                        <li><a href="shop-account.html" class="sub-menu-item">My Account</a></li>
-                                    </ul>  
-                                </li>
-                                <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Photography </a><span class="submenu-arrow"></span>
-                                    <ul class="submenu">
-                                        <li><a href="photography-about.html" class="sub-menu-item">About Us</a></li>
-                                        <li><a href="photography-portfolio.html" class="sub-menu-item">Portfolio</a></li>
-                                    </ul> 
-                                </li>
-                                <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Job / Careers </a><span class="submenu-arrow"></span>
-                                    <ul class="submenu">
-                                        <li><a href="page-job-grid.html" class="sub-menu-item">All Jobs</a></li>
-                                        <li><a href="page-job-detail.html" class="sub-menu-item">Job Detail</a></li>
-                                        <li><a href="page-job-apply.html" class="sub-menu-item">Job Apply</a></li>
-                                        <li><a href="page-job-post.html" class="sub-menu-item">Job Post </a></li>
-                                        <li><a href="page-job-career.html" class="sub-menu-item">Job Career </a></li>
-                                        <li><a href="page-job-candidates.html" class="sub-menu-item">Job Candidates</a></li>
-                                        <li><a href="page-job-candidate-detail.html" class="sub-menu-item">Candidate Detail</a></li>
-                                        <li><a href="page-job-companies.html" class="sub-menu-item">All Companies</a></li>
-                                        <li><a href="page-job-company-detail.html" class="sub-menu-item">Company Detail</a></li>
-                                    </ul>  
-                                </li>
-                                <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Forums </a><span class="submenu-arrow"></span>
-                                    <ul class="submenu">
-                                        <li><a href="forums-topic.html" class="sub-menu-item">Forum Topic</a></li>
-                                        <li><a href="forums-comments.html" class="sub-menu-item">Forum Comments</a></li>
-                                    </ul>  
-                                </li>
-                                <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Helpcenter </a><span class="submenu-arrow"></span>
-                                    <ul class="submenu">
-                                        <li><a href="helpcenter.html" class="sub-menu-item">Overview</a></li>
-                                        <li><a href="helpcenter-faqs.html" class="sub-menu-item">FAQs</a></li>
-                                        <li><a href="helpcenter-guides.html" class="sub-menu-item">Guides</a></li>
-                                        <li><a href="helpcenter-support.html" class="sub-menu-item">Support</a></li>
-                                    </ul>  
-                                </li>
-                                <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Blog </a><span class="submenu-arrow"></span>
-                                    <ul class="submenu">
-                                        <li><a href="blog.html" class="sub-menu-item">Blogs</a></li>
-                                        <li><a href="blog-sidebar.html" class="sub-menu-item">Blogs & Sidebar</a></li>
-                                        <li><a href="blog-detail.html" class="sub-menu-item">Blog Detail</a></li>
-                                        <li class="has-submenu child-menu-item"><a href="javascript:void(0)"> Blog Posts </a><span class="submenu-arrow"></span>
-                                            <ul class="submenu">
-                                                <li><a href="blog-standard-post.html" class="sub-menu-item">Standard Post</a></li>
-                                                <li><a href="blog-slider-post.html" class="sub-menu-item">Slider Post</a></li>
-                                                <li><a href="blog-gallery-post.html" class="sub-menu-item">Gallery Post</a></li>
-                                                <li><a href="blog-youtube-post.html" class="sub-menu-item">Youtube Post</a></li>
-                                                <li><a href="blog-vimeo-post.html" class="sub-menu-item">Vimeo Post</a></li>
-                                                <li><a href="blog-audio-post.html" class="sub-menu-item">Audio Post</a></li>
-                                                <li><a href="blog-blockquote-post.html" class="sub-menu-item">Blockquote</a></li>
-                                                <li><a href="blog-left-sidebar-post.html" class="sub-menu-item">Left Sidebar</a></li>
-                                            </ul>  
-                                        </li>
-                                    </ul>  
-                                </li>
-                                <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Email Template</a><span class="submenu-arrow"></span>
-                                    <ul class="submenu">
-                                        <li><a href="email-confirmation.html" class="sub-menu-item">Confirmation</a></li>
-                                        <li><a href="email-password-reset.html" class="sub-menu-item">Reset Password</a></li>
-                                        <li><a href="email-alert.html" class="sub-menu-item">Alert</a></li>
-                                        <li><a href="email-invoice.html" class="sub-menu-item">Invoice</a></li>
-                                    </ul>  
-                                </li>
-                                <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Auth Pages </a><span class="submenu-arrow"></span>
-                                    <ul class="submenu">
-                                        <li><a href="auth-login.html" class="sub-menu-item">Login</a></li>
-                                        <li><a href="auth-signup.html" class="sub-menu-item">Signup</a></li>
-                                        <li><a href="auth-re-password.html" class="sub-menu-item">Reset Password</a></li>
-                                        <li><a href="auth-lock-screen.html" class="sub-menu-item">Lock Screen</a></li>
-                                    </ul>  
-                                </li>
-                                <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Utility </a><span class="submenu-arrow"></span>
-                                    <ul class="submenu">
-                                        <li><a href="page-terms.html" class="sub-menu-item">Terms of Services</a></li>
-                                        <li><a href="page-privacy.html" class="sub-menu-item">Privacy Policy</a></li>
-                                    </ul>  
-                                </li>
-                                <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Special</a><span class="submenu-arrow"></span>
-                                    <ul class="submenu">
-                                        <li><a href="page-comingsoon.html" class="sub-menu-item">Coming Soon</a></li>
-                                        <li><a href="page-maintenance.html" class="sub-menu-item">Maintenance</a></li>
-                                        <li><a href="page-error.html" class="sub-menu-item">Error</a></li>
-                                        <li><a href="page-thankyou.html" class="sub-menu-item">Thank you</a></li>
-                                    </ul>
-                                </li>
-                                <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Contact </a><span class="submenu-arrow"></span>
-                                    <ul class="submenu">
-                                        <li><a href="contact-detail.html" class="sub-menu-item">Contact Detail</a></li>
-                                        <li><a href="contact-one.html" class="sub-menu-item">Contact One</a></li>
-                                        <li><a href="contact-two.html" class="sub-menu-item">Contact Two</a></li>
-                                    </ul>  
-                                </li>
-                                <li class="has-submenu parent-menu-item"><a href="javascript:void(0)"> Multi Level Menu</a><span class="submenu-arrow"></span>
-                                    <ul class="submenu">
-                                        <li><a href="javascript:void(0)" class="sub-menu-item">Level 1.0</a></li>
-                                        <li class="has-submenu child-menu-item"><a href="javascript:void(0)"> Level 2.0 </a><span class="submenu-arrow"></span>
-                                            <ul class="submenu">
-                                                <li><a href="javascript:void(0)" class="sub-menu-item">Level 2.1</a></li>
-                                                <li><a href="javascript:void(0)" class="sub-menu-item">Level 2.2</a></li>
-                                            </ul>  
-                                        </li>
-                                    </ul>  
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="has-submenu parent-parent-menu-item">
-                            <a href="javascript:void(0)">Portfolio</a><span class="menu-arrow"></span>
-                            <ul class="submenu megamenu">
-                                <li>
-                                    <ul>
-                                        <li class="megamenu-head">Modern Portfolio</li>
-                                        <li><a href="portfolio-modern-two.html" class="sub-menu-item">Two Column</a></li>
-                                        <li><a href="portfolio-modern-three.html" class="sub-menu-item">Three Column</a></li>
-                                        <li><a href="portfolio-modern-four.html" class="sub-menu-item">Four Column</a></li>
-                                        <li><a href="portfolio-modern-five.html" class="sub-menu-item">Five Column</a></li>
-                                        <li><a href="portfolio-modern-six.html" class="sub-menu-item">Six Column</a></li>
-                                    </ul>
-                                </li>
-
-                                <li>
-                                    <ul>
-                                        <li class="megamenu-head">Classic Portfolio</li>
-                                        <li><a href="portfolio-classic-two.html" class="sub-menu-item">Two Column</a></li>
-                                        <li><a href="portfolio-classic-three.html" class="sub-menu-item">Three Column</a></li>
-                                        <li><a href="portfolio-classic-four.html" class="sub-menu-item">Four Column</a></li>
-                                        <li><a href="portfolio-classic-five.html" class="sub-menu-item">Five Column</a></li>
-                                        <li><a href="portfolio-classic-six.html" class="sub-menu-item">Six Column</a></li>
-                                    </ul>
-                                </li>
-
-                                <li>
-                                    <ul>
-                                        <li class="megamenu-head">Creative Portfolio</li>
-                                        <li><a href="portfolio-creative-two.html" class="sub-menu-item">Two Column</a></li>
-                                        <li><a href="portfolio-creative-three.html" class="sub-menu-item">Three Column</a></li>
-                                        <li><a href="portfolio-creative-four.html" class="sub-menu-item">Four Column</a></li>
-                                        <li><a href="portfolio-creative-five.html" class="sub-menu-item">Five Column</a></li>
-                                        <li><a href="portfolio-creative-six.html" class="sub-menu-item">Six Column</a></li>
-                                    </ul>
-                                </li>
-                        
-                                <li>
-                                    <ul>
-                                        <li class="megamenu-head">Masonry Portfolio</li>
-                                        <li><a href="portfolio-masonry-two.html" class="sub-menu-item">Two Column</a></li>
-                                        <li><a href="portfolio-masonry-three.html" class="sub-menu-item">Three Column</a></li>
-                                        <li><a href="portfolio-masonry-four.html" class="sub-menu-item">Four Column</a></li>
-                                        <li><a href="portfolio-masonry-five.html" class="sub-menu-item">Five Column</a></li>
-                                        <li><a href="portfolio-masonry-six.html" class="sub-menu-item">Six Column</a></li>
-                                    </ul>
-                                </li>
-                        
-                                <li>
-                                    <ul>
-                                        <li class="megamenu-head">Portfolio Detail</li>
-                                        <li><a href="portfolio-detail-one.html" class="sub-menu-item">Portfolio One</a></li>
-                                        <li><a href="portfolio-detail-two.html" class="sub-menu-item">Portfolio Two</a></li>
-                                        <li><a href="portfolio-detail-three.html" class="sub-menu-item">Portfolio Three</a></li>
-                                        <li><a href="portfolio-detail-four.html" class="sub-menu-item">Portfolio Four</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="has-submenu parent-menu-item">
-                            <a href="javascript:void(0)">Docs</a><span class="menu-arrow"></span>
-                            <ul class="submenu">
-                                <li><a href="ui-components.html" class="sub-menu-item">Components <span class="bg-yellow-500 inline-block text-white text-[10px] font-bold px-2.5 py-0.5 rounded h-5 ms-1">New</span></a></li>
-                                <li><a href="documentation.html" class="sub-menu-item">Documentation</a></li>
-                                <li><a href="changelog.html" class="sub-menu-item">Changelog</a></li>
-                                <li><a href="widget.html" class="sub-menu-item">Widget</a></li>
-                            </ul>
-                        </li>
-
-                        <li><a href="contact-one.html" class="sub-menu-item">Contact</a></li>
-                    </ul><!--end navigation menu-->
-                </div><!--end navigation-->
-            </div><!--end container-->
-        </nav><!--end header-->
-        <!-- End Navbar -->
-  </header>
+        <!-- LTR & RTL Mode Code -->
+        <div class="fixed top-[40%] -end-3 z-50">
+            <a href="" id="switchRtl">
+                <span class="py-1 px-3 relative inline-block rounded-b-md -rotate-90 bg-white dark:bg-slate-900 shadow-md dark:shadow dark:shadow-gray-700 font-bold rtl:block ltr:hidden" >LTR</span>
+                <span class="py-1 px-3 relative inline-block rounded-t-md -rotate-90 bg-white dark:bg-slate-900 shadow-md dark:shadow dark:shadow-gray-700 font-bold ltr:block rtl:hidden">RTL</span>
+            </a>
+        </div>
+        <!-- LTR & RTL Mode Code -->
+    </body>
 </template>
 
 <script setup lang="ts"></script>
